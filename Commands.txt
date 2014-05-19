@@ -1,0 +1,4 @@
+commit -m  “commit name ”
+push -u origin master
+pull origin master
+
