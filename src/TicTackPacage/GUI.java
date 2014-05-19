@@ -194,6 +194,7 @@ public class GUI {
 		button7.setLayoutData(data);
 		button8.setLayoutData(data);
 		button9.setLayoutData(data);
+		shell.setBounds(10, 10, 800, 600);
 		shell.pack();
 		shell.open();
 		while (!shell.isDisposed()){
