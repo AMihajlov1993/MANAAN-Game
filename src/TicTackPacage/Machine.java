@@ -1,14 +1,24 @@
 package TicTackPacage;
-
+//Draft class
 public class Machine {
-	//Paths, score to be evaluated
-	int[] firstDiagonal = new int[3];
-	int[] secondDiagonal = new int[3];
-	int[] firstLine = new int[3];
-	int[] secondLine = new int[3];
-	int[] thirdLine = new int[3];
-	int[] secondCol = new int[3];
-	int[] firstCol = new int[3];
-	int[] thirdCol = new int[3];
-
+	private static void Game() {
+		Player myPlayer = new Player();
+		Player bot = new Player();
+		Player currentPlayer;
+		int myPlayerTurn = 0;
+		boolean isPlaying = true;
+		
+		while(isPlaying) {
+			if(myPlayerTurn % 2 == 0) {
+				currentPlayer = myPlayer;
+			
+			}else {
+				currentPlayer = bot;
+			}
+			myPlayerTurn++;
+			
+		}
+		
+	}
+	
 }
