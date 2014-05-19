@@ -2,7 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="swt-debug.jar"/>
-	<classpathentry exported="true" kind="lib" path="swt.jar"/>
+	<classpathentry kind="lib" path="libs-linux/swt-debug.jar"/>
+	<classpathentry kind="lib" path="libs-linux/swt.jar"/>
+	<classpathentry kind="lib" path="libs-win/swt-debug.jar"/>
+	<classpathentry kind="lib" path="libs-win/swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
