@@ -1,4 +1,5 @@
 package TicTackPacage;
+
 public class Player {
 
 	public enum TicToeEnum {
@@ -8,6 +9,16 @@ public class Player {
 	private String Name;
 	private int Score = 0;
 	private TicToeEnum symbol;
+	private int row = -1;
+	private int col = -1;
+
+	public int getRow() {
+		return row;
+	}
+
+	public int getCol() {
+		return col;
+	}
 
 	public TicToeEnum getSymbol() {
 		return symbol;
@@ -35,5 +46,10 @@ public class Player {
 
 	public void NullPoint() {
 		this.Score = 0;
+	}
+
+	public void SetPosition(int row, int col) {
+		this.row = row;
+		this.col = col;
 	}
 }
