@@ -55,7 +55,7 @@ public class BoardData {
 			return true;
 		} else if (trippleEquals(board[2], board[4], board[6])) {
 			return true;
-		}
+		} else {
 			return false;
 		}
 	}
