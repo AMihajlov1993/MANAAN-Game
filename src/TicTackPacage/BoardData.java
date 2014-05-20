@@ -41,19 +41,21 @@ public class BoardData {
 	public boolean isComplete() {
 		if (trippleEquals(board[0], board[1], board[2])) {
 			return true;
-		} else if (trippleEquals(board[4], board[5], board[6])) {
+		} else if (trippleEquals(board[3], board[4], board[5])) {
 			return true;
-		} else if (trippleEquals(board[7], board[8], board[9])) {
+		} else if (trippleEquals(board[6], board[7], board[8])) {
 			return true;
-		} else if (trippleEquals(board[1], board[5], board[9])) {
+		} else if (trippleEquals(board[0], board[4], board[8])) {
+			return true;
+		} else if (trippleEquals(board[0], board[3], board[6])) {
 			return true;
 		} else if (trippleEquals(board[1], board[4], board[7])) {
 			return true;
 		} else if (trippleEquals(board[2], board[5], board[8])) {
 			return true;
-		} else if (trippleEquals(board[3], board[6], board[9])) {
+		} else if (trippleEquals(board[2], board[4], board[6])) {
 			return true;
-		} else {
+		}
 			return false;
 		}
 	}
