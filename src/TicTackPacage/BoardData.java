@@ -12,8 +12,16 @@ public class BoardData {
 
 	private char[] board = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-	private int[][] combinations = { { 1, 5, 9 }, { 3, 5, 7 }, { 1, 2, 3 },
-			{ 4, 5, 6 }, { 7, 8, 9 }, { 1, 4, 7 }, { 2, 5, 8 }, { 3, 6, 9 } };
+	// private int[][] combinations = { { 1, 5, 9 }, { 3, 5, 7 }, { 1, 2, 3 },
+	// { 4, 5, 6 }, { 7, 8, 9 }, { 1, 4, 7 }, { 2, 5, 8 }, { 3, 6, 9 } };
+
+	public char[] getBoard() {
+		return this.board;
+	}
+
+	public void setBoard(char[] board) {
+		this.board = board;
+	}
 
 	public char getField(int Field) {
 		return this.board[Field];
@@ -68,4 +76,5 @@ public class BoardData {
 		}
 		return true;
 	}
+
 }
