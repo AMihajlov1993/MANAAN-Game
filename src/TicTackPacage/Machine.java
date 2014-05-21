@@ -6,7 +6,9 @@ import TicTackPacage.Player.TicToeEnum;
 public class Machine {
 	private static void Game() {
 		Player myPlayer = new Player();
+		myPlayer.setSymbol(TicToeEnum.X);
 		Player bot = new Player();
+		bot.setSymbol(TicToeEnum.O);
 		Player currentPlayer;
 		BoardData theBoard = new BoardData();
 		int myPlayerTurn = 0;
@@ -14,11 +16,11 @@ public class Machine {
 		boolean isWinner = false;
 		while (isPlaying) {
 			if (myPlayerTurn % 2 == 0) {
-				myPlayer.setSymbol(TicToeEnum.X);
 				currentPlayer = myPlayer;
+				//TODO get the pressed button
+				//TODO setField[Field, myPlayer.getSymbol]
 
 			} else {
-				bot.setSymbol(TicToeEnum.O);
 				currentPlayer = bot;
 			}
 			myPlayerTurn++;
