@@ -8,20 +8,23 @@ public class Machine {
 		Player myPlayer = new Player();
 		Player bot = new Player();
 		Player currentPlayer;
+		BoardData theBoard = new BoardData();
 		int myPlayerTurn = 0;
 		boolean isPlaying = true;
 		boolean isWinner = false;
-		GUI currentBoard = new GUI();
 		while(isPlaying) {
 			if(myPlayerTurn % 2 == 0) {
 				myPlayer.setSymbol(TicToeEnum.X);
 				currentPlayer = myPlayer;
+				
 			
 			}else {
 				bot.setSymbol(TicToeEnum.O);
 				currentPlayer = bot;
 			}
 			myPlayerTurn++;
+			
+			
 			
 			if(isWinner) {
 				isPlaying = false;
