@@ -11,6 +11,7 @@ public class Machine {
 	BoardData Board = new BoardData();
 	public Machine() {
 		super();
+		this.GameStart();
 	}
 	public int getCurrentPlayerCounter() {
 		return currentPlayerCounter;
@@ -33,9 +34,9 @@ public class Machine {
 		if(this.getCurrentPlayerCounter()==1){
 			currentPlayer=Player2;
 			this.setCurrentPlayerCounter(2);
-		} else if(this.getCurrentPlayerCounter()==1){
+		} else if(this.getCurrentPlayerCounter()==2){
 			currentPlayer=Player1;
-			this.setCurrentPlayerCounter(2);
+			this.setCurrentPlayerCounter(1);
 		}
 	}
 	public void Mark(int Field){
@@ -43,7 +44,6 @@ public class Machine {
 			Board.setField(Field, currentPlayer.getSymbol());
 		if((!Board.isComplete())&&(!Board.isFull()))
 				this.SwitchPlayer();
-				return;
 		}
 		if(Board.isComplete()){
 			this.setWinner(getCurrentPlayerCounter());
