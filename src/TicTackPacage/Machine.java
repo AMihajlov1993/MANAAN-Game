@@ -1,39 +1,67 @@
 package TicTackPacage;
 
-import TicTackPacage.Player.TicToeEnum;
 
 //Draft class
 public class Machine {
-	private static void Game() {
-		Player myPlayer = new Player();
-		myPlayer.setSymbol(TicToeEnum.X);
-		Player bot = new Player();
-		bot.setSymbol(TicToeEnum.O);
-		Player currentPlayer;
-		BoardData theBoard = new BoardData();
-		int myPlayerTurn = 0;
-		boolean isPlaying = true;
-		boolean isWinner = false;
-		while (isPlaying) {
-			if (myPlayerTurn % 2 == 0) {
-				currentPlayer = myPlayer;
-				//TODO get the pressed button
-				//TODO setField[Field, myPlayer.getSymbol]
-
-			} else {
-				currentPlayer = bot;
-			}
-			myPlayerTurn++;
-
-			if (isWinner) {
-				isPlaying = false;
-			}
-
-			if (myPlayerTurn == 8) {
-				isPlaying = false;
-			}
-		}
-
+	Player Player1 = new Player('X');
+	Player Player2 = new Player('O');
+	int currentPlayerCounter = 0;
+	Player currentPlayer;
+	int winner = 0;
+	BoardData Board = new BoardData();
+	public Machine() {
+		super();
 	}
-
+	public int getCurrentPlayerCounter() {
+		return currentPlayerCounter;
+	}
+	public void setCurrentPlayerCounter(int currentPlayerCounter) {
+		this.currentPlayerCounter = currentPlayerCounter;
+	}
+	public int getWinner() {
+		return winner;
+	}
+	public void setWinner(int winner) {
+		this.winner = winner;
+	}
+	public void GameStart(){
+		this.setCurrentPlayerCounter(1);
+		currentPlayer=Player1;
+		this.setWinner(0);
+	}
+	public void SwitchPlayer(){
+		if(this.getCurrentPlayerCounter()==1){
+			currentPlayer=Player2;
+			this.setCurrentPlayerCounter(2);
+		} else if(this.getCurrentPlayerCounter()==1){
+			currentPlayer=Player1;
+			this.setCurrentPlayerCounter(2);
+		}
+	}
+	public void Mark(int Field){
+		if(Board.getField(Field)==0){
+			Board.setField(Field, currentPlayer.getSymbol());
+		if((!Board.isComplete())&&(!Board.isFull()))
+				this.SwitchPlayer();
+				return;
+		}
+		if(Board.isComplete()){
+			this.setWinner(getCurrentPlayerCounter());
+			currentPlayer.setScore();
+			Board.resetBoard();
+			this.GameStart();
+		}
+		if(Board.isFull()){
+			this.setWinner(0);
+			this.GameStart();
+		}
+	}
+	public void ResetGame(){
+		Player1.NullPoint();
+		Player2.NullPoint();
+		Board.resetBoard();
+		this.GameStart();
+	}
+		
+	
 }

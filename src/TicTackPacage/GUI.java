@@ -17,8 +17,6 @@ public class GUI {
 
 	public static void main(String[] args) {
 
-		Player player = new Player();
-
 		// TODO Auto-generated method stub
 		Display display = new Display();
 		final Shell shell = new Shell(display);

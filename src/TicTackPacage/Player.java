@@ -2,29 +2,33 @@ package TicTackPacage;
 
 public class Player {
 
-	public enum TicToeEnum {
+	/*public enum TicToeEnum {
 		X, O
-	}
+	}*/
 
 	private String Name;
 	private int Score = 0;
-	private TicToeEnum symbol;
-	private int row = -1;
-	private int col = -1;
+	private char symbol;
+	//private int row = -1;
+	//private int col = -1;
 
-	public int getRow() {
-		return row;
-	}
 
-	public int getCol() {
-		return col;
-	}
-
-	public TicToeEnum getSymbol() {
+	public char getSymbol() {
 		return symbol;
 	}
 
-	public void setSymbol(TicToeEnum symbol) {
+	public Player(char symbol) {
+		super();
+		if (symbol=='X'){
+			Name = "Player 1";
+		}else{
+			Name = "Player 2";
+		}
+		Score = 0;
+		this.symbol = symbol;
+	}
+
+	public void setSymbol(char symbol) {
 		this.symbol = symbol;
 	}
 
@@ -48,8 +52,8 @@ public class Player {
 		this.Score = 0;
 	}
 
-	public void SetPosition(int row, int col) {
+	/*public void SetPosition(int row, int col) {
 		this.row = row;
 		this.col = col;
-	}
+	}*/
 }
