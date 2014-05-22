@@ -45,7 +45,7 @@ public class Player {
 	}
 
 	public void setScore() {
-		this.Score = +1;
+		this.Score += 1;
 	}
 
 	public void NullPoint() {

@@ -29,6 +29,7 @@ public class Machine {
 		this.setCurrentPlayerCounter(1);
 		currentPlayer=Player1;
 		this.setWinner(0);
+		this.Board.resetBoard();
 	}
 	public void SwitchPlayer(){
 		if(this.getCurrentPlayerCounter()==1){
@@ -53,6 +54,7 @@ public class Machine {
 		}
 		if(Board.isFull()){
 			this.setWinner(0);
+			Board.resetBoard();
 			this.GameStart();
 		}
 	}
